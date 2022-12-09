@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Совпадения друзей, кто у тебя в чёрном списке",
+  "description": "Позволяет определять друзей пользователя, кто у тебя находится в чёрном списке.",
+  "version": "1.0",
+  "action": {
+    "default_title": "My Extension",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://vk.com/*"
+      ],
+      "js": [
+        "vk_inject.js",
+        "jquery-observe.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "idle"
+  ]
+}
